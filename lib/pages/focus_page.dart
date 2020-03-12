@@ -86,9 +86,15 @@ List<ItemModel> _modelList = List();
   }
   Widget _buildFixedExtentListItem(ItemModel item) {
     // texs
-    return Container(
+    return GestureDetector(
+      onTap: () {
+        print(item.toJson());
+      },
+      child: Container(
+      padding: const EdgeInsets.all(10),
         color: Colors.black,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
               child: CircleAvatar(
@@ -102,13 +108,29 @@ List<ItemModel> _modelList = List();
               child: Container(
                 width: 50,
                 height: 50,
-                child: Image.network(item.imageList.first.url),
+                child: Image.network(item.imageList.length > 0 ? item.imageList.first.url : ""),
               ),
-            )
+            ),
+            Text("${item.replies}", style: TextStyle(color: Colors.white)),
+            // Stack(
+            //   children: <Widget>[
+            //     Positioned(
+            //       child:Text("${item.publishTime}", style: TextStyle(color: Colors.white)),
+            //       bottom: 10,
+            //       right: 10,
+            //     ),
+            //     Positioned(
+            //       child: Text("${item.source}", style: TextStyle(color: Colors.white)),
+            //       top: 10,
+            //       right: 10,
+            //     )
+            //   ],
+            // )
           ],
         ),
        
-      );
+      ),
+    );
   }
   Widget _buildFavoriteForum() {
     return Container(
