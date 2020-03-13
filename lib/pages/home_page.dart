@@ -16,9 +16,6 @@ class BeautifyHomePageState extends State<BeautifyHomePage> {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: <Widget>[
-        SliverAppBar(
-          title: Text("data"),
-        ),
         SliverPadding(
             padding: const EdgeInsets.all(8.0),
             sliver: new SliverGrid( //Grid

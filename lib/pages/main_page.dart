@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 import './home_page.dart';
 import './focus_page.dart';
-
+import './recommend_page.dart';
+import './favorite_forum_page.dart';
 class MainPage extends StatefulWidget {
 MainPageState createState() => MainPageState();
 }
@@ -13,7 +14,6 @@ class MainPageState extends State<MainPage>    with SingleTickerProviderStateMix
 FocusPage focusPage = FocusPage();
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _tabCtrl = TabController(length: 3, initialIndex: 0, vsync: this);
   }
@@ -37,8 +37,8 @@ FocusPage focusPage = FocusPage();
         controller: _tabCtrl,
         children: <Widget>[
           FocusPage(),
-          HomePage(),
-          HomePage()
+          RecommendPage(),
+          FavoriteForumPage()
         ]
       ),
     );
