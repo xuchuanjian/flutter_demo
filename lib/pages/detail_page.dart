@@ -10,7 +10,7 @@ class DetailPage extends StatefulWidget {
 }
 
 class DetailPageState extends State<DetailPage> {
-  List<CommentItemModel> _commemtModels;
+  List<CommentItemModel> _commemtModels = List();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/item_model.dart';
 import '../view/list_item.dart';
+
 class RecommendPage extends StatefulWidget {
   RecommendPageState createState() => RecommendPageState();
 }
@@ -15,8 +16,14 @@ class RecommendPageState extends State<RecommendPage> {
     return CustomScrollView(
       slivers: <Widget>[
         SliverList(
-          delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
-            return ListItem(item: _models[index]);
+          delegate:
+              SliverChildBuilderDelegate((BuildContext context, int index) {
+            return GestureDetector(
+              child: ListItem(item: _models[index]),
+              onTap: () {
+                print(_models[index].author);
+              },
+            );
           }, childCount: _models.length),
         )
       ],

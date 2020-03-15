@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/item_model.dart';
+import '../utils/utils.dart';
 
 class ListItem extends StatelessWidget {
   final ItemModel item;
@@ -28,7 +29,7 @@ class ListItem extends StatelessWidget {
             right: 20,
             bottom: 0,
             child: Text(
-              "${item.publishTime}",
+              Utils.formatTimestamp(item.publishTime),
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -51,8 +52,13 @@ class ListItem extends StatelessWidget {
     widgets.add(
       Row(
         children: <Widget>[
-          CircleAvatar(
-            backgroundImage: NetworkImage(item.avatarUrl),
+          Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(
+                    image: NetworkImage(item.avatarUrl), fit: BoxFit.cover)),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10),
@@ -86,16 +92,24 @@ class ListItem extends StatelessWidget {
       ),
     );
     if (item.imageList != null && item.imageList.length > 0) {
-      widgets.add(
-        Container(
-          color: Colors.green,
-          margin: const EdgeInsets.only(bottom: 10),
-          width: 100,
-          height: 50,
-          child: Image.network(
-            item.imageList.first.url,
-            fit: BoxFit.scaleDown,
+      List<Widget> images = List();
+      item.imageList.forEach((value) {
+        images.add(
+          Container(
+            margin: const EdgeInsets.only(bottom: 10, right: 10),
+            width: item.imageList.length == 1 ? 80 : 60,
+            height: 50,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(item.imageList.first.url),
+                  fit: BoxFit.fitWidth),
+            ),
           ),
+        );
+      });
+      widgets.add(
+        Row(
+          children: images,
         ),
       );
     }
