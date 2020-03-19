@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import './pages/main_page.dart';
 
 void main() => runApp(new MyApp());
@@ -10,11 +8,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: ThemeData(
-        primaryColor: Colors.black
+        primaryColor: Color(0xFF1E1F20),
       ),
-      home: MainPage()
-      );
+      home: MainPage(),
+    );
   }
 }
-
-

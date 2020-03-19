@@ -1,0 +1,53 @@
+{
+    "code": 200,
+    "messages": "",
+    "data": {
+        "list": [
+            {
+                "typeid": 136,
+                "name": "求助"
+            },
+            {
+                "typeid": 137,
+                "name": "申卡"
+            },
+            {
+                "typeid": 138,
+                "name": "晒卡"
+            },
+            {
+                "typeid": 139,
+                "name": "调额"
+            },
+            {
+                "typeid": 140,
+                "name": "积分"
+            },
+            {
+                "typeid": 141,
+                "name": "账单"
+            },
+            {
+                "typeid": 142,
+                "name": "还款"
+            },
+            {
+                "typeid": 143,
+                "name": "晒羊毛"
+            },
+            {
+                "typeid": 144,
+                "name": "爆料"
+            },
+            {
+                "typeid": 145,
+                "name": "吐槽"
+            },
+            {
+                "typeid": 146,
+                "name": "其他"
+            }
+        ]
+    },
+    "date": 1584611138
+}

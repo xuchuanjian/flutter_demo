@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/forum_model.dart';
+import './forum_detail_page.dart';
 
 class FavoriteForumPage extends StatefulWidget {
   FavoriteForumPageState createState() => FavoriteForumPageState();
@@ -16,24 +17,6 @@ class FavoriteForumPageState extends State<FavoriteForumPage> {
       color: Color(0xFF010203),
       child: CustomScrollView(
         slivers: <Widget>[
-          SliverPadding(
-            padding: const EdgeInsets.all(8.0),
-            sliver: SliverGrid(
-              
-              delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int position) {
-                return Text(position.toString(), style: TextStyle(color: Colors.white),);
-              }, childCount: 1),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                
-                 ),
-                
-              
-            ),
-          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext ctx, int index) {
@@ -77,6 +60,9 @@ class FavoriteForumPageState extends State<FavoriteForumPage> {
                           ),
                         ),
                       ),
+                      onTap: () {
+                        _pushDetail();
+                      },
                     ),
                   ),
                 );
@@ -85,6 +71,17 @@ class FavoriteForumPageState extends State<FavoriteForumPage> {
             ),
           )
         ],
+      ),
+    );
+  }
+
+  Widget _pushDetail() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return ForumDetailPage();
+        },
       ),
     );
   }

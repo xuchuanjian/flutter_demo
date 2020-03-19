@@ -1,0 +1,17 @@
+{
+    "code": 200,
+    "messages": "",
+    "data": {
+        "fid": 8,
+        "forum_name": "招商银行讨论区",
+        "threads": 384961,
+        "posts": 4920081,
+        "todayposts": 1214,
+        "favtimes": 116182,
+        "forum_icon": "https:\/\/p.51credit.com\/bbs\/static\/app\/forum\/8.png",
+        "gid": 46,
+        "is_favorite": 1,
+        "forum_type": 1
+    },
+    "date": 1584611138
+}

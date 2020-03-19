@@ -11,7 +11,7 @@ class ListItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Color(0xFF1E1F20),
         border: Border(
           bottom: BorderSide(
             width: 1,
